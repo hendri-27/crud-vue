@@ -1,0 +1,22 @@
+.home {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .btn-inline {
+      height: 40px !important;
+      background-color: $primary-color;
+    }
+  }
+
+  .action-btn-wrapper {
+    display: flex;
+    gap: 15px;
+    padding: 0 10px;
+
+    .action-btn {
+      cursor: pointer;
+    }
+  }
+}

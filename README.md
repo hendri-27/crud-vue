@@ -17,3 +17,8 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Setup Environment
+```
+copy file .env.example rename it to .env and it works
+```

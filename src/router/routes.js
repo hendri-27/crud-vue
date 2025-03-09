@@ -1,33 +1,26 @@
 import auth from './allRouters/auth'
-
-import store from '@/store'
+import Cookies from 'js-cookie'
 
 const routes = [
+  {
+    path: '/home/',
+    name: 'Landing Page',
+    redirect: { name: 'Home Page' },
+  },
   {
     path: '/',
     name: 'Home Page',
     meta: {
       authRequired: true,
       beforeResolve(_, from, next) {
-        if (store.state.credential.token === null) {
+        if (!Cookies.get('resource')) {
           next({ name: 'Login Page'})
+        } else {
+          next()
         }
       }
     },
-    component: () => import('@/router/views/HomeView.vue')
-  },
-  {
-    path: '/',
-    name: 'Profile Page',
-    meta: {
-      authRequired: true,
-      beforeResolve(_, from, next) {
-        if (store.state.credential.token === null) {
-          next({ name: 'Login Page'})
-        }
-      }
-    },
-    component: () => import('@/router/views/ProfileView.vue')
+    component: () => import('@/router/views/home/HomeView.vue')
   },
   ...auth,
 ]

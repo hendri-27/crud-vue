@@ -1,0 +1,17 @@
+@import './node_modules/bootstrap/scss/functions';
+@import './node_modules/bootstrap/scss/variables';
+@import './node_modules/bootstrap/scss/mixins';
+@import 'bootstrap/dist/css/bootstrap.css';
+@import 'bootstrap-vue/dist/bootstrap-vue.css';
+@import './variables.scss';
+@import 'bootstrap';
+
+@import 'custom/body';
+
+// import custom component
+@import 'custom/component/formulate';
+@import 'custom/component/layout';
+
+// import styling pages
+@import 'custom/pages/account';
+@import 'custom/pages/home';

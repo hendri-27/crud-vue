@@ -1,0 +1,36 @@
+.auth-page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .__form-wrapper {
+    width: 400px;
+    height: 500px;
+    background: $secondary-color;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    box-shadow: 0 0 2em $shadow-color;
+    gap: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .formulate-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      .formulate-input[data-classification=text] {
+        width: 250px;
+      }
+    }
+  }
+}

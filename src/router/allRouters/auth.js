@@ -1,29 +1,28 @@
+import Cookies from 'js-cookie'
+
 export default [
   {
     path: '/login',
     name: 'Login Page',
     meta: {
       beforeResolve(_, from, next) {
-        if (store.state.credential.token !== null) {
+        if (Cookies.get('resource')) {
           window.location.href = '/'
-        } else {
-          next()
         }
+        next()
       }
     },
     component: () => import('@/router/views/account/LoginView.vue')
   },
   {
     path: '/register',
-    name: 'Profile Page',
+    name: 'Register Page',
     meta: {
-      authRequired: true,
       beforeResolve(_, from, next) {
-        if (store.state.credential.token !== null) {
+        if (Cookies.get('resource')) {
           window.location.href = '/'
-        } else {
-          next()
         }
+        next()
       }
     },
     component: () => import('@/router/views/account/RegisterView.vue')
